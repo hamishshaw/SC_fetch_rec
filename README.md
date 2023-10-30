@@ -2,10 +2,13 @@
 
 This project provides utility to enable the fetch robot to pick up a can of coke.
 
-Currently the euc_cluster folder contains a package the will take a snapshot of a depth image and calculate of the clustered objects within the scene using the PCL libraries features.
-
-# TODO 
-object recognition - check each cluster and see whether it is a coke can
-
-moveit - have moveit calculate an arm movement to reach the detected object and pick it up
-
+The project has 3 folders which provide functionality. See each folder for further info on how to run and what they do
+## overall use
+This project provides packages that can detect a coke can using PCL's vfh descriptor to analyse pointcloud data \ 
+The PCL library is the sole provider of detection in this project and no RGB data is used\
+The pipeline works as follows \
+1. vfh descriptors are created that allows pointclouds to be compared quickly, giving a likness value
+2. a testing data set is created that is used in the object detection system that the fetch received data from
+3. a pointcloud is first clustered so that each cluster can be compared to the vfh descriptors
+4. a cluster is then selected as the most similar cluster and the centre of the cluster is calculated
+5. this location is sent to the fetch robot and the end affector is moved to this location using moveit
