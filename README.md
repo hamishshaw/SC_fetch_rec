@@ -12,3 +12,7 @@ The pipeline works as follows
 3. a pointcloud is first clustered so that each cluster can be compared to the vfh descriptors
 4. a cluster is then selected as the most similar cluster and the centre of the cluster is calculated
 5. this location is sent to the fetch robot and the end affector is moved to this location using moveit
+## Contributions
+33.3% - Hamish Shaw 12947709
+33.3% - Madeleine Croker 14259067
+33.3% Issam Ur Rahman Ammar Syed 13923560
